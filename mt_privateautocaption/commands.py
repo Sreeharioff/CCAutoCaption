@@ -12,7 +12,7 @@ USERNAME=Config.BOT_USERNAME
 
 # start_Msg, help_msg, about_msg
 # Team Mrkt Tech
-MRKT = "@MRKT_Tech"
+MRKT = "@Tiyaan_bots"
 
 
 @Client.on_message(filters.private & filters.command("start"))
@@ -20,8 +20,8 @@ async def start_meg(client, update):
     text = f"""<b> 👋Hello {update.from_user.mention}\n\nI am an AutoCaption bot\n\nAll you have to do is add me to your channel and I will show you my power\n\nFor more info check help Button\n\n {MRKT}</b>"""
     reply_markup =  InlineKeyboardMarkup( [[
         InlineKeyboardButton("help↗️", callback_data="heroku"),
-        InlineKeyboardButton("🗣️Group", url="t.me/Mrkt_tech_Group"),
-        InlineKeyboardButton("Channel📢", url="t.me/Mrkt_Tech")
+        InlineKeyboardButton("🗣️Group", url="t.me/CinemaCompanyMovie"),
+        InlineKeyboardButton("Channel📢", url="t.me/Tiyaan_bots")
         ]]
     )
     await update.reply_text(
@@ -37,8 +37,6 @@ async def callback_data(client, update: CallbackQuery):
 
     if query_data == "heroku":
         buttons = [[
-            InlineKeyboardButton("🖥️ Tutorial Video 🖥️", url="https://youtu.be/p4Z9ZN1lZUk")
-            ],[
             InlineKeyboardButton("🏠Home", url=f"https://t.me/{USERNAME}?start=start"),
             InlineKeyboardButton("❌️Close", callback_data="motech"),
             InlineKeyboardButton("About↗️", callback_data="about")
@@ -47,29 +45,29 @@ async def callback_data(client, update: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
 
         await update.message.edit_text(
-            f"""<b>🔻AutoCaption Bot🔻\n\nTake a look at the end of the video\nIt has to say\n\n🖥️Youtube Tutorial Video\n\nHeroku 👉 https://dashboard.heroku.com/\n\n {MT}</b>""",
+            f"""<b>🔻CCAutoCaption Bot🔻</b>""",
             reply_markup=reply_markup,
             parse_mode="html"
         )
 
     if query_data == "about":
         buttons = [[
-            InlineKeyboardButton("🗣️Group", url="t.me/Mrkt_tech_Group"),
-            InlineKeyboardButton("Channel📢", url="t.me/Mrkt_Tech"),
-            InlineKeyboardButton("📃Bot List", url="t.me/Mrkt_Tech")
+            InlineKeyboardButton("🗣️Group", url="t.me/CinemaCompanyMovie"),
+            InlineKeyboardButton("Channel📢", url="t.me/Tiyaan_bots"),
+            InlineKeyboardButton("📃Bot List", url="t.me/Tiyaan_bots")
             ],[
             InlineKeyboardButton("🏠Home", url=f"https://t.me/{USERNAME}?start=start"),
             InlineKeyboardButton("🔙Back", callback_data="heroku"),
-            InlineKeyboardButton("❌️Close", callback_data="motech")
+            InlineKeyboardButton("❌️Close", callback_data="Tiyaan_bots")
             ]]
     
         reply_markup = InlineKeyboardMarkup(buttons)
 
         await update.message.edit_text(
-            """<b>➪ Bot Name</b> AutoCaptionBot\n\n➪ <b>Framework : Pyrogram</b>\n\n➪<b> Language : Python</b>\n\n➪<b> Server : Heroku</b> \n\n<b>➪ Version : 2.0.1</b>\n\n<b>➪ Source Code  : <a href="https://github.com/Rafeeq-99/PrivateAutoCaption">Touch Me 🤗</a>\n\n➪ Developer :  @Rafeeq_99\n\n➪ Credits : <a href="https://github.com/Rafeeq-99/PrivateAutoCaption/blob/main/mt_privateautocaption/Credits.md">Credits</a></b>""",
+            """<b>➪ Bot Name</b> AutoCaptionBot\n\n➪ <b>Framework : Pyrogram</b>\n\n➪<b> Language : Python</b>\n\n➪<b> Server : Koyeb</b> \n\n<b>➪ Version : 1.0.0</b>\n\n<b>➪ Source Code  : <a href="https://t.me/Tiyaan_bots">Touch Me 🤗</a>\n\n➪ Developer :  @Sreehari3\n</a></b>""",
             reply_markup=reply_markup,
             parse_mode="html"
         )
 
-    elif query_data == "motech":
+    elif query_data == "Tiyaan_bots":
         await update.message.delete()
