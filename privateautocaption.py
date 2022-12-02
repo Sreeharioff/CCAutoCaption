@@ -3,7 +3,9 @@
 import os
 import logging
 import pyrogram
-from config import Config  
+from aiohttp import web
+from mt_privateautocaption import web_server
+from config import Config, PORT
 
 
 if __name__ == "__main__" :
@@ -18,4 +20,9 @@ if __name__ == "__main__" :
         plugins=plugins,
         workers=300
     )
+    app = web.AppRunner(await web_server())
+        await app.setup()
+        bind_address = "0.0.0.0"
+        await web.TCPSite(app, bind_address, PORT).start()
+        
     MRKTTECH.run()
